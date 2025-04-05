@@ -1,0 +1,88 @@
+# ===== DOTNET (.NET) =====
+## Build results
+bin/
+obj/
+out/
+[Bb]uild/
+[Ll]ogs/
+*.log
+
+## Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+
+## Rider
+.idea/
+
+## ASP.NET
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.json
+
+## Entity Framework
+*.mdf
+*.ldf
+
+## Paket
+.paket/
+paket-files/
+
+## Others
+*.ncrunch*
+_ReSharper*/
+*.DotSettings.user
+TestResult.xml
+TestResults/
+*.cache
+*.dbmdl
+
+# ===== ANGULAR =====
+## Angular build
+/dist/
+/tmp/
+/out-tsc/
+
+## Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+## Angular CLI
+.angular/
+.angular-cache/
+
+## Compiled output
+*.js
+*.js.map
+*.tsbuildinfo
+
+## Environment files
+src/environments/environment*.ts
+
+## Others
+.idea/
+.DS_Store
+Thumbs.db
+
+# ===== GENERAL =====
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignore archives
+*.zip
+*.tar.gz
+*.rar
+
+# Ignore logs
+*.log

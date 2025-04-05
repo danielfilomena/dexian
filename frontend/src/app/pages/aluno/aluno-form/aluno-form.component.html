@@ -1,0 +1,86 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Novo Aluno</h4>
+  <button type="button" class="btn-close close pull-right" aria-label="close" (click)="bsModalRef.hide()" >
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+
+  <form role="form" #form="ngForm">
+
+    <div>
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control form-control-sm" id="nome" name="nome" required autocomplete="off" [(ngModel)]="alunoViewModel.sNome" #nome="ngModel" [class.is-invalid]="nome.touched && nome.invalid">
+      <div *ngIf="nome.invalid" class="invalid-feedback">
+        Campo Obrigatório
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-4">
+
+        <label for="data" class="form-label">Data Nascimento</label>
+        <input type="date" class="form-control form-control-sm" id="data" name="data" required autocomplete="off" [(ngModel)]="alunoViewModel.dNacimento" #data="ngModel" [class.is-invalid]="data.touched && data.invalid">
+        <div *ngIf="data.invalid" class="invalid-feedback">
+          Campo Obrigatório
+        </div>
+
+      </div>
+
+      <div class="col-4">
+
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" class="form-control form-control-sm" id="cpf" name="cpf" mask="000.000.000-99" required autocomplete="off" [(ngModel)]="alunoViewModel.sCPF" #cpf="ngModel" [class.is-invalid]="cpf.touched && cpf.invalid">
+        <div *ngIf="cpf.invalid" class="invalid-feedback">
+          Campo Obrigatório
+        </div>
+
+      </div>
+
+      <div class="col-4">
+
+        <label for="celular" class="form-label">Celular</label>
+        <input type="text" class="form-control form-control-sm" id="celular" name="celular" mask="(00) 0 0000.0000" required autocomplete="off" [(ngModel)]="alunoViewModel.sCelular" #celular="ngModel" [class.is-invalid]="celular.touched && celular.invalid">
+        <div *ngIf="celular.invalid" class="invalid-feedback">
+          Campo Obrigatório
+        </div>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <label for="endereco" class="form-label">Endereco</label>
+      <input type="text" class="form-control form-control-sm" id="endereco" name="endereco" required autocomplete="off" [(ngModel)]="alunoViewModel.sEndereco" #endereco="ngModel" [class.is-invalid]="endereco.touched && endereco.invalid">
+      <div *ngIf="endereco.invalid" class="invalid-feedback">
+        Campo Obrigatório
+      </div>
+
+    </div>
+
+    <div>
+      <label for="escola" class="form-label">Escola</label>
+      <select name="escola" id="escola" class="form-select" [(ngModel)]="alunoViewModel.iCodEscola" #escola="ngModel" required [class.is-invalid]="escola.touched && escola.invalid">
+        <option></option>
+        <option *ngFor="let item of escolas" value="{{item.iCodEscola}}">{{item.sDescricao}}</option>
+      </select>
+
+      <div *ngIf="escola.invalid" class="invalid-feedback">
+        Campo Obrigatório
+      </div>
+
+    </div>
+
+  </form>
+
+</div>
+
+<div class="modal-footer">
+
+  <button class="btn btn-outline-danger" (click)="bsModalRef.hide()">Cancelar</button>
+  <button class="btn btn-outline-primary" [disabled]="form?.invalid" (click)="onSave()">Salvar</button>
+
+</div>

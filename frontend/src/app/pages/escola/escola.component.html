@@ -1,0 +1,43 @@
+<div class="mt-3 ms-5">
+  <h3>Escola</h3>
+</div>
+
+<div class="mt-3 ms-5">
+  <button class="btn btn-outline-primary" (click)="onNew()">
+    <i class="bx bx-plus"></i>
+    Novo
+  </button>
+</div>
+
+<form class="d-flex mt-3 ms-5">
+
+  <div>
+    <label for="Localizar">Localizar</label>
+    <input type="text" id="Localizar" name="Localizar" class="form-control form-control-sm" [(ngModel)]="filtro">
+  </div>
+
+  <div class="mt-4 ms-2">
+    <button class="btn btn-outline-secondary btn-sm" (click)="onSearch()"><i class="bx bx-search"></i></button>
+  </div>
+
+</form>
+
+<div class="mt-4 ms-5 me-5">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of escolas">
+        <td>{{ item.sDescricao }}</td>
+        <td>
+          <button class="btn btn-outline-info btn-sm me-1" title="Alterar" (click)="onUpdate(item.iCodEscola)"><i class="bx bx-edit"></i></button>
+          <button class="btn btn-outline-danger btn-sm" title="Excluir" (click)="onDelete(item.iCodEscola)"><i class="bx bx-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
